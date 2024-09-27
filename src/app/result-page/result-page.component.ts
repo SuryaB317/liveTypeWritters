@@ -25,13 +25,13 @@ export class ResultPageComponent {
   }
   setAnimalAvatar() {
     if (this.objData.charsCnt <= 150) {
-      this.animal_avatar =' /assets/img/turtle.svg';
+      this.animal_avatar =' ./assets/img/turtle.svg';
       this.animal_avatar_res = 'Turtle';
     } else if (this.objData.charsCnt >= 150 && this.objData.value < 250) {
-      this.animal_avatar ='/assets/img/dino.svg';
+      this.animal_avatar ='./assets/img/dino.svg';
       this.animal_avatar_res = 'Dino';
     } else {
-      this.animal_avatar ='/assets/img/octopus.svg';
+      this.animal_avatar ='./assets/img/octopus.svg';
       this.animal_avatar_res = 'Octobus';
     }
   }
