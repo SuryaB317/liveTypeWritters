@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card" *ngIf="isContentVisible">
+    <!-- cancel btn -->
+    <div class="cancel">
+      <button (click)="toogleContent()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- needs to share the score here via component sharing Depends on the score turtle/dino/octo-->
+    <!-- <img src="/assets/img/octopus.svg" alt=""> -->
+
+    <img [src]="animal_avatar" alt="loading..">
+    <div class="cardRight">
+      <h1>You're an {{animal_avatar_res}}</h1>
+      <h3>Neat! You type with the speed of
+        <br> <mark>{{objData.wordsCnt}} WPH </mark>({{objData.charsCnt}}CPM). Your accuracy
+        <br>was {{objData.accuracy}}% Good job!
+      </h3>
+
+      <h2>Share Your Score:</h2>
+      <div class="socialIcons">
+        <a href="http://www.facebook.com"><i class="fa-brands fa-square-facebook" style="color: #0165E1;"></i></a>
+        <a href="http://www.linkedin.com"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
+        <a href="http://x.com"><i class="fa-brands fa-square-x-twitter" style="color: #000000;"></i></a>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cardBottom" *ngIf="isContentVisible">
+    <h2>Save Score on your Organization's <span style="color: #0a66c2;">leaderboard</span></h2>
+
+    <span>
+      <button style="background-color: #ffffff;" (click)="refreshPage()">Try again</button>
+      <button style="background-color: #0a66c2; color: azure;" (click)="refreshPage()">Save</button>
+    </span>
+  </div>
+</div>

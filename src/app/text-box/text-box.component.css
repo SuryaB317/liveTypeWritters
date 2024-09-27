@@ -1,0 +1,19 @@
+.word{
+  display: inline-block;
+  font-family: sans-serif;
+  margin: 0 5px;
+  letter-spacing: -9px;
+}
+
+#game{
+  line-height: 35px;
+  height: 105px;
+  overflow: hidden;
+}
+
+.correct{
+  color: green;
+}
+.incorrect{
+  color: red;
+}

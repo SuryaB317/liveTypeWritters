@@ -1,0 +1,89 @@
+<app-nav-bar></app-nav-bar>
+<div class="content" *ngIf="isContentVisible">
+  <!-- Contace button using anchor -->
+  <span id="fb-btn">
+    <a href="https://www.facebook.com/login.php"><i
+        class="fa-brands fa-facebook"></i> Continue with facebook</a>
+  </span>
+
+  <!-- Dark & Light Mode action -->
+  <span id="col-btn">
+    <div class="mode-toggle">
+      <button (click)="toggleMode()">
+        <div *ngIf="!isDarkMode" class="dark-mode">
+          <i class="fa-solid fa-moon" style="color: #000000;"></i>
+          Dark
+        </div>
+        <div *ngIf="isDarkMode" class="light-mode">
+          <i class="fa-solid fa-sun" style="color: #ffffff;"></i>
+          Light
+        </div>
+
+      </button>
+    </div>
+  </span>
+
+  <div class="titles">
+    <h2 display-3>{{title2}}</h2>
+    <br>
+    <h1>{{title1}}</h1>
+
+    <!-- 3box for words/min& chars/ %accuracy -->
+
+    <div class="threeBox">
+
+      <!-- Clock with border -->
+      <div id="time">
+        <div class="circle" style="--clr:#fee800" #cirCol>
+          <div class="dots" #secDot></div>
+          <svg>
+            <circle cx="70" cy="70" r="60"></circle>
+            <circle cx="70" cy="70" r="70" #ss></circle>
+          </svg>
+          <div id="seconds">
+            {{objData.currentTime}}
+            <br> Seconds
+          </div>
+        </div>
+      </div>
+      <div class="box-container">
+        <div class="box">{{objData.wordsCnt}}</div>
+        <div class="box-name">words/min</div>
+      </div>
+      <div class="box-container">
+        <div class="box">{{objData. charsCnt}}</div>
+        <div class="box-name">chars/min</div>
+      </div>
+      <div class="box-container">
+        <div class="box">{{objData.accuracy}}</div>
+        <div class="box-name">% accuracy</div>
+      </div>
+    </div>
+    <!-- input Box and random text -->
+    <div class="textBox">
+      <!-- <span class="placeholder">{{getPlaceHolderText()}}</span> -->
+      <input type="text"
+        (input)="onInputChange($event)"
+        [value]="inputText"
+        (click)="startTimer()"
+        [disabled]="isInputDisabled"
+        (keyup)="onKeyUp($event)" />
+      <div id="game">
+         <span *ngFor="let char of comparisonResult" class="word">
+          <span
+            [ngClass]="{'correct': char.isCorrect, 'incorrect': !char.isCorrect}">
+            {{ char.character }}
+          </span>
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- result page -->
+<div  *ngIf="objData.currentTime == 0">
+  <app-result-page [objData]="objData"></app-result-page>
+</div>

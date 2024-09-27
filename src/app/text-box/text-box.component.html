@@ -1,0 +1,25 @@
+<p>text-box works!</p>
+
+<!-- <div id="game">
+  <div class="word" [(ngModel)]="words">
+
+    {{words}}
+
+    <h1>Words list</h1>
+
+    <input type="text" [(ngModel)] = "test" >
+{{test}}
+
+  </div>
+</div> -->
+
+<div >
+  <input type="text" (input)="onInputChange($event)" [value]="inputText" />
+  <div id="game" >
+    <span *ngFor="let char of comparisonResult" class="word">
+      <span [ngClass]="{'correct': char.isCorrect, 'incorrect': !char.isCorrect}">
+        {{ char.character }}
+      </span>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,233 @@
+
+/* Background image styling */
+.bgImg {
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.content{
+  margin: 25px;
+  padding: 10px;
+  height: auto;
+  width: auto;
+  background-color: #d345a9;
+}
+
+
+/* Facebook button styling */
+#fb-btn a {
+  font-size: .8rem;
+  border: 2px solid #555;
+  padding: 10px;
+  text-decoration: none;
+  color: #090909;
+  display: inline-flex;
+  align-items: center;
+  float: right;
+
+}
+
+#fb-btn i  {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #020202;
+}
+
+/* Heading of the page */
+.titles{
+  margin-top: 75px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.titles h1,h2{
+  margin: 0%;
+}
+
+/* score Box */
+.threeBox{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.box{
+  margin: 20px;
+  width: 75px;
+  height: 75px;
+  background-color: #a8c6d9;
+  color: #020202;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.box-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-name{
+  font-size: 12px;
+  color: #020202;
+  margin-left: 10px;
+}
+
+/* input field */
+.textBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+.textBox input{
+
+  margin-top: 20px;
+  width: 80vw;
+  max-width: 1000px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+input{
+  padding: 10px;
+}
+
+/* For Clock */
+#time{
+  display: flex;
+  gap: 40px;
+  color: #ffffff;
+}
+
+#time .circle{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#time .circle svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+#time .circle svg circle{
+  width: 100%;
+  height: 100%;
+  /* fill: transparent; */
+  transform: translate(5px, 5px);
+  stroke-width: 5;
+  padding: 10%;
+}
+#time .circle svg circle:nth-child(2){
+  stroke: var(--clr);
+  stroke-dasharray: 440;
+}
+#time div{
+  position: absolute;
+  text-align: center;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.dots{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+}
+.dots::before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr),
+  0 0 60px var(--clr);
+}
+
+/* Generated text */
+.word span{
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 5px;
+  letter-spacing: -15px;
+}
+#game{
+  line-height: 35px;
+  height: 105px;
+  overflow: hidden;
+  position: relative;
+}
+
+.correct{
+  color: rgb(0, 255, 119);
+}
+/* .incorrect{
+  color: rgb(254, 4, 4);
+} */
+
+#words{
+  filter: blur(5px);
+}
+
+/* Toggle styles */
+
+.dark-mode {
+  color: #000000;
+}
+
+.light-mode{
+  color: #fff;
+
+}
+.mode-toggle {
+  margin: 20px;
+  text-align: center;
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Align icon and text */
+}
+
+.mode-toggle button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.mode-toggle button:hover {
+  opacity: 0.8;
+}
+

@@ -1,0 +1,25 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+ }
+
+/* .timer{
+  position: absolute;
+  background-color: aqua;
+  width: 20%;
+  height: 8%;
+  border-radius: 10%;
+  border: 3px solid rgb(249, 5, 5);
+} */
+
+/* .timer h2{
+  font-size: 2em;
+  justify-items: center;
+  float: left;
+}
+.timer h4{
+  top: 90px;
+  font-size: 0.9em;
+  float: right;
+} */

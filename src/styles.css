@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body.light-mode {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+}
+
+body.dark-mode {
+  background-color: #333333; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.mode-toggle {
+  margin: 20px;
+  text-align: center;
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Align icon and text */
+}
+
+.mode-toggle button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.mode-toggle button:hover {
+  opacity: 0.8; /* Hover effect */
+}
+
+/* Additional styles to enhance visual changes */
+body.light-mode .mode-toggle button {
+  background-color: #f0f0f0; /* Light mode button color */
+}
+
+body.dark-mode .mode-toggle button {
+  background-color: #444444; /* Dark mode button color */
+}
