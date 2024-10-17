@@ -29,7 +29,15 @@
   float: right;
 
 }
-
+a:hover{
+  border: 2px solid #fff;
+  background-color: #1877f2;
+  color: aliceblue;
+  transition: 1.25s;
+}
+span a:hover{
+  color: aliceblue;
+}
 #fb-btn i  {
   margin-right: 10px;
   font-size: 20px;
@@ -190,6 +198,9 @@ input{
 
 .correct{
   color: rgb(0, 255, 119);
+}
+.word{
+  color: #090909;
 }
 /* .incorrect{
   color: rgb(254, 4, 4);

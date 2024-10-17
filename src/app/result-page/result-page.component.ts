@@ -18,8 +18,6 @@ export class ResultPageComponent {
     this.isContentVisible = !this.isContentVisible;
   }
 
-
-
   ngOnChanges(): void {
     this.setAnimalAvatar();
   }

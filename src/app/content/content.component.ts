@@ -20,7 +20,7 @@ export class ContentComponent {
   text = "the sun dipped below the horizon, painting the sky in hues of orange and purple. a gentle breeze rustled the leaves of the nearby trees, carrying with it the sweet scent of blooming flowers. as twilight settled in, the first stars began to twinkle, each one a tiny beacon in the vast expanse of the night. nearby, the sound of laughter echoed from a group of friends gathered around a crackling bonfire, their faces illuminated by the warm glow. in that moment, everything felt perfect, as if time itself had paused to savor the beauty of the evening.".split(' ');
   wordsCount = this.text.length;
 
-  comparisonResult: { character: string; isCorrect: boolean }[] = [];
+  comparisonResult: { character: string; isCorrect: boolean; isInCorrect : boolean}[] = [];
 
   charPerMin: number = 0;
   wordPerMin: number = 0;
@@ -108,21 +108,26 @@ export class ContentComponent {
     const fullText = this.words.trim();
     let correctCharCount = 0;
 
-    console.log("Full Text:", fullText)
+    // console.log("Full Text:", fullText)
+
     for (let i = 0; i < fullText.length; i++) {
       const char = fullText[i];
-      const inputChar = input[i] ? input[i] : '';
-      const isCorrect = input[i] === char;
-
+      const inputChar = input[i] || '';
+      const isCorrect = inputChar === char;
+      const isInCorrect = input.length >1 && !isCorrect;
 
       if (isCorrect) {
         correctCharCount++;
       }
-      this.comparisonResult.push({ character: char, isCorrect });
+
+      this.comparisonResult.push({ character: char, isCorrect, isInCorrect });
     }
     this.scoreCalc(correctCharCount);
-    console.log("input text is:", this.inputText)
+
+    //console.log("input text is:", this.inputText)
+
   }
+
   getPlaceHolderText(): string {
     return this.comparisonResult.map(char => char.character).join('');
   }
@@ -133,7 +138,12 @@ export class ContentComponent {
 
   scoreCalc(correctCharCount: number) {
 
+    const totalChars = this.words.trim().length- 30;
+    const inCorrectCharCount = totalChars - correctCharCount ;
+    const accuracy = totalChars > 0 ? ((totalChars - correctCharCount)/inCorrectCharCount) * 100 : 0;
+
     this.objData.charsCnt = correctCharCount;
+    this.objData.accuracy = accuracy.toFixed(1);
     this.wordPerMin = this.inputText.trim().split(/\s+/).filter(word => word.length > 0).length; // Count of words
     this.objData.wordsCnt = this.wordPerMin;
   }
