@@ -33,7 +33,7 @@ export class ContentComponent implements OnInit {
     wordsCnt: 0,
     charsCnt: 0,
     accuracy: 0,
-    currentTime: 10
+    currentTime: 60
   }
 
 
