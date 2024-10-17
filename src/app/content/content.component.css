@@ -1,21 +1,63 @@
 
-/* Background image styling */
-.bgImg {
-  background-size: cover;
-  height: 90vh;
+/* Background image waves styling */
+.custom-shape-divider-top-1729150852 {
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
-  z-index: -10;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1729150852 svg {
+  position: relative;
+  display: block;
+  width: calc(105% + 1.3px);
+  height: 136px;
+}
+
+.custom-shape-divider-top-1729150852 .shape-fill {
+  fill: #EFF17A;
+}
+/* Wave ends */
+
+body {
+  background-color: aliceblue;
+  color: #050505;
+}
+body.dark-mode {
+  background-color: #282126;
+  color: #e9f9c2;
+}
+
+.mode-toggle button {
+  background-color: #444;
+  color: #fff;
+}
+
+#fb-btn a {
+  color: #ffffff;
 }
 
 .content{
   margin: 25px;
   padding: 10px;
-  height: auto;
+  height: 110%;
   width: auto;
-  background-color: #d345a9;
+  background-color:aliceblue;
+  color: #050505;
+  box-shadow: 12px 12px 12px #282126,
+  -10px -10px 10px rgb(255, 255, 255) ;
 }
 
+body.dark-mode .content {
+  background-color: #3a3a3a;
+  color: #e9f9c2;
+}
+.mode-toggle button {
+  background-color: #444;
+  color: #fff;
+}
 
 /* Facebook button styling */
 #fb-btn a {
@@ -34,6 +76,8 @@ a:hover{
   background-color: #1877f2;
   color: aliceblue;
   transition: 1.25s;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+  -5px -5px 5px white;
 }
 span a:hover{
   color: aliceblue;
@@ -46,15 +90,18 @@ span a:hover{
 
 /* Heading of the page */
 .titles{
-  margin-top: 75px ;
+  margin-top: 075px ;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.titles h1,h2{
+.titles h1{
+  position: absolute;
+  top: 50%;
   margin: 0%;
+  color: #050505;
 }
 
 /* score Box */
@@ -99,13 +146,14 @@ span a:hover{
   align-items: center;
   margin: 20px;
   position: relative;
+
 }
 .textBox input{
 
   margin-top: 20px;
   width: 80vw;
   max-width: 1000px;
-  height: 50px;
+  height: 70px;
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -191,9 +239,12 @@ input{
 }
 #game{
   line-height: 35px;
-  height: 105px;
+  height: 155px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  justify-items: center;
 }
 
 .correct{
@@ -202,9 +253,7 @@ input{
 .word{
   color: #090909;
 }
-/* .incorrect{
-  color: rgb(254, 4, 4);
-} */
+
 
 #words{
   filter: blur(5px);
@@ -214,10 +263,11 @@ input{
 
 .dark-mode {
   color: #000000;
+
 }
 
 .light-mode{
-  color: #fff;
+  color: #e9f9c2;
 
 }
 .mode-toggle {
@@ -231,11 +281,11 @@ input{
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  align-items: center; /* Align icon and text */
+  align-items: center;
 }
 
 .mode-toggle button i {
-  margin-right: 8px; /* Space between icon and text */
+  margin-right: 8px;
 }
 
 .mode-toggle button:hover {

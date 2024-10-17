@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import { ThemeService } from './../theme.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-result-page',
   templateUrl: './result-page.component.html',
   styleUrls: ['./result-page.component.css']
 })
-export class ResultPageComponent {
+export class ResultPageComponent implements OnInit {
 
 
   @Input() objData: any;
@@ -13,11 +13,13 @@ export class ResultPageComponent {
   animal_avatar:string = '';
   animal_avatar_res: string ='';
   isContentVisible: boolean = true;
+  isDarkMode: boolean = false;
 
-  toogleContent() {
-    this.isContentVisible = !this.isContentVisible;
+constructor(private themeService:ThemeService){}
+
+  ngOnInit(): void {
+    this.isDarkMode = this.themeService.isDarkMode();
   }
-
   ngOnChanges(): void {
     this.setAnimalAvatar();
   }
@@ -36,5 +38,9 @@ export class ResultPageComponent {
 
   refreshPage(){
     window.location.reload()
+  }
+
+  contentVisible(){
+    this.isContentVisible = false;
   }
 }

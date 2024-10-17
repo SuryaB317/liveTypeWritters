@@ -1,17 +1,15 @@
+<div class="result"  [ngClass]="{'dark-mode': isDarkMode}">
 <div class="container">
-  <div class="card" *ngIf="isContentVisible">
+  <div class="card" *ngIf="isContentVisible"  [ngClass]="{'dark-mode': isDarkMode}">
     <!-- cancel btn -->
     <div class="cancel">
-      <button (click)="toogleContent()">
+      <button (click)="refreshPage()">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
-    <!-- needs to share the score here via component sharing Depends on the score turtle/dino/octo-->
-    <!-- <img src="/assets/img/octopus.svg" alt=""> -->
-
     <img [src]="animal_avatar" alt="loading..">
-    <div class="cardRight">
+    <div class="cardRight" >
       <h1>You're an {{animal_avatar_res}}</h1>
       <h3>Neat! You type with the speed of
         <br> <mark>{{objData.wordsCnt}} WPH </mark>({{objData.charsCnt}}CPM). Your accuracy
@@ -29,7 +27,7 @@
     </div>
   </div>
 
-  <div class="cardBottom" *ngIf="isContentVisible">
+  <div class="cardBottom" *ngIf="isContentVisible"  [ngClass]="{'dark-mode': isDarkMode}">
     <h2>Save Score on your Organization's <span style="color: #0a66c2;">leaderboard</span></h2>
 
     <span>
@@ -37,4 +35,5 @@
       <button style="background-color: #0a66c2; color: azure;" (click)="refreshPage()">Save</button>
     </span>
   </div>
+</div>
 </div>

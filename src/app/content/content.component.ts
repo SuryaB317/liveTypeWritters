@@ -1,11 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ThemeService } from '../theme.service';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
 
   @ViewChild('ss') ss !: ElementRef;
   @ViewChild('secDot') secDot !: ElementRef;
@@ -33,7 +33,7 @@ export class ContentComponent {
     wordsCnt: 0,
     charsCnt: 0,
     accuracy: 0,
-    currentTime: 60
+    currentTime: 10
   }
 
 
@@ -76,9 +76,13 @@ export class ContentComponent {
   }
 
   // Generating new text for each time
-  constructor() {
+  constructor(private themeService:ThemeService) {
     this.newGame();
 
+  }
+
+  ngOnInit(): void {
+    this.isDarkMode = this.themeService.isDarkMode();
   }
 
   randomWord() {
@@ -151,18 +155,10 @@ export class ContentComponent {
   //Toggle buttons
 
   toggleMode() {
-    this.isDarkMode = !this.isDarkMode;
-    this.applyTheme();
+    this.themeService.toggleDarkMode();
+    this.isDarkMode = this.themeService.isDarkMode();
   }
-  applyTheme() {
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    }
-  }
+
 
 
 }

@@ -1,5 +1,5 @@
 import { Component,ViewChild} from '@angular/core';
-import { ResultPageComponent } from './result-page/result-page.component';
+import { ThemeService } from './theme.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
